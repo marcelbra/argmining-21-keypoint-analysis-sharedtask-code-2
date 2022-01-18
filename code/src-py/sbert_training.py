@@ -17,6 +17,7 @@ import csv
 import logging
 import os
 import sys
+import torch
 
 sys.path.insert(0, '../../src-py/')
 import track_1_kp_matching
@@ -50,7 +51,7 @@ def train_model(dataset_path, eval_data_path, subset_name, output_path, model_na
         word_embedding_model = models.Transformer(model_name)
         word_embedding_model.max_seq_length = max_seq_length
     
-        if add_special_token:
+        if add_special_token: # True
             word_embedding_model.tokenizer.add_tokens(['<SEP>'], special_tokens=True)
             word_embedding_model.auto_model.resize_token_embeddings(len(word_embedding_model.tokenizer))
 
@@ -101,3 +102,5 @@ def train_model(dataset_path, eval_data_path, subset_name, output_path, model_na
               evaluation_steps=500,
               warmup_steps=warmup_steps,
               output_path=output_path)
+
+    return model
