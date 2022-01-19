@@ -104,3 +104,12 @@ def train_model(dataset_path, eval_data_path, subset_name, output_path, model_na
               output_path=output_path)
 
     return model
+
+train_model('/home/marcelbraasch/PycharmProjects/argmining-21-keypoint-analysis-sharedtask-code-2/data/siamese-data/',
+                                   "/home/marcelbraasch/PycharmProjects/argmining-21-keypoint-analysis-sharedtask-code-2/data/kpm_data",
+                                   'dev',
+                                   "/home/marcelbraasch/PycharmProjects/new_KPA/argmining-21-keypoint-analysis-sharedtask-code-2/code/siamese-models",
+                                   'roberta-base',
+                                   model_suffix='contrastive-10-epochs',
+                                   data_file_suffix='contrastive',
+                                   num_epochs=1, max_seq_length=70, add_special_token=True, train_batch_size=32, loss='ContrastiveLoss')
