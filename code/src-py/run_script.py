@@ -75,3 +75,11 @@ def load_kpm_data(model):
 path = "/home/marcelbraasch/PycharmProjects/argmining-21-keypoint-analysis-sharedtask-code/model"
 model = SentenceTransformer(path)
 load_kpm_data(model)
+
+"""
+
+
+[{'dropped': 'Reference', 'new_kp': 'Children can still express themselves using other means'}, {'dropped': 'Children', 'new_kp': 'can still express themselves using other means'}, {'dropped': 'can', 'new_kp': 'Children still express themselves using other means'}, {'dropped': 'still', 'new_kp': 'Children can express themselves using other means'}, {'dropped': 'express', 'new_kp': 'Children can still themselves using other means'}, {'dropped': 'themselves', 'new_kp': 'Children can still express using other means'}, {'dropped': 'using', 'new_kp': 'Children can still express themselves other means'}, {'dropped': 'other', 'new_kp': 'Children can still express themselves using means'}, {'dropped': 'means', 'new_kp': 'Children can still express themselves using other'}]
+
+
+"""
